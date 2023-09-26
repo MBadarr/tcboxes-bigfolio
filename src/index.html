@@ -1,15 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tc Boxes</title>
-  </head>
-  <body>
-    <h1 class="text-center text-green-500">tc boxes</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Tc Boxes</title>
+</head>
+
+<body>
+  <div class="flex justify-center items-center mt-10">
+    <img src="../src//assets//icons//logo.svg" alt="logo" srcset="" />
+  </div>
+  <h1 class="text-center font-text text-3xl font-bold mt-7">Choose products</h1>
+
+  <!-- Card Section  -->
+  <div class="flex justify-center mt-6">
+    <div class="block max-w-sm p-4 bg-white h-5/6 border w-4/5 rounded-t-2xl shadow">
+      <div class="max-w-md mx-auto">
+        <!-- Tabs -->
+        <div class="flex  border-b border-gray-300">
+          <!-- Tray -->
+          <div class="flex-1">
+            <a href="#" class="py-2 px-4 flex flex-col items-center bg-white rounded-t-lg border-b-2 border-green-500 ">
+              <img src="../src/assets/icons/tray.svg" alt="Tray" />
+              <span class="mt-1">Tray</span>
+            </a>
+          </div>
+          <!-- Box -->
+          <div class="flex-1">
+            <a href="#"
+              class="py-2 px-4 flex flex-col items-center bg-white rounded-t-lg border-b-2 border-transparent">
+              <img src="../src/assets/icons/boxes.svg" alt="Boxes" />
+              <span class="mt-1">Box</span>
+            </a>
+          </div>
+          <!-- Accessories -->
+          <div class="flex-1">
+            <a href="#"
+              class="py-2 px-4 flex flex-col items-center bg-white rounded-t-lg border-b-2 border-transparent">
+              <img src="../src/assets/icons/accessories.svg" alt="Accessories" />
+              <span class="mt-1">Accessories</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="bg-white rounded-b-lg">
+          <!-- Content for Tab 1 (visible when Tab 1 is active) -->
+          <div class="tab-content" id="tab1">
+            <div class="mt-4">
+              <h2 class="text-base font-medium">Choose your model</h2>
+              <div class="flex items-center justify-center gap-7 pt-3">
+                <!-- Card 1 -->
+                <div
+                  class="w-44 h-40 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                  onclick="toggleCardHighlight(this)">
+                  <img src="./assets//images//headboard.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                  <div class="flex justify-center gap-0 flex-col mb-4">
+                    <p class="text-center text-gray-700 highlight-text">With</p>
+                    <p class="text-center text-gray-700 highlight-text">headboard</p>
+                  </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                  class="w-44 h-40 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                  onclick="toggleCardHighlight(this)">
+                  <img src="./assets//images//headboard2.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                  <div class="flex justify-center gap-0 flex-col mb-4">
+                    <p class="text-center text-gray-700 highlight-text">Without</p>
+                    <p class="text-center text-gray-700 highlight-text">headboard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h2 class="text-base font-medium">Choose your size</h2>
+              <!-- <div class="mt-4"> -->
+              <div class="max-w-md mx-auto rounded-md">
+                <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                  <option value="option1" selected>1650MM</option>
+                  <option value="option2">1650MM</option>
+                  <option value="option3">1650MM</option>
+                </select>
+              </div>
+              <!-- </div> -->
+            </div>
+
+            <div class="mt-4">
+              <h2 class="text-base font-medium">Choose your finish</h2>
+              <div class="flex gap-8 pt-4">
+                <div class="w-12 h-12 bg-black rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                </div>
+                <div class="w-12 h-12 bg-white-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                </div>
+                <div class="w-12 h-12 bg-amber-50 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                </div>
+              </div>
+            </div>
+
+
+            <!-- button -->
+
+            <div class="mt-8">
+              <button class="text-white px-6 py-6 w-full rounded-md bg-green-500 text-lg font-bold">
+                Add and continue
+              </button>
+            </div>
+
+            <div class="mt-8">
+              <div class="flex justify-center items-center">
+                <button class="flex justify-center items-center gap-3">
+                  <img src="./assets//icons//arrow.svg" alt="arrow">
+                  <p class="text-lg font-bold">Back</p>
+                </button>
+              </div>
+            </div>
+
+            <!-- Content for Tab 2 (visible when Tab 2 is active) -->
+            <div class="tab-content hidden" id="tab2">
+              Content for Tab 2 goes here.
+              Content for Tab 2 goes here.
+              Content for Tab 2 goes here.
+            </div>
+
+            <!-- Content for Tab 3 (visible when Tab 3 is active) -->
+            <div class="tab-content hidden" id="tab3">
+              Content for Tab 3 goes here.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // card highlighting
+      let selectedCard = null;
+
+      function toggleCardHighlight(card) {
+        if (selectedCard === card) {
+          // Deselect the currently selected card
+          selectedCard.classList.remove("bg-gray-200");
+          const textElements = selectedCard.querySelectorAll(".font-bold");
+          textElements.forEach((textElement) => {
+            textElement.classList.remove("font-bold");
+          });
+          selectedCard = null;
+        } else {
+          // Deselect the previously selected card (if any)
+          if (selectedCard) {
+            selectedCard.classList.remove("bg-gray-200");
+            const textElements = selectedCard.querySelectorAll(".font-bold");
+            textElements.forEach((textElement) => {
+              textElement.classList.remove("font-bold");
+            });
+          }
+
+          // Select the clicked card
+          card.classList.add("bg-gray-200");
+          const textElements = card.querySelectorAll(".text-gray-700");
+          textElements.forEach((textElement) => {
+            textElement.classList.add("font-bold");
+          });
+          selectedCard = card;
+        }
+      }
+
+      // color select
+
+      let selectedColor = null;
+
+      function selectColor(circle) {
+        if (selectedColor) {
+          selectedColor.classList.remove("border-4", "border-white");
+        }
+
+        circle.classList.add("border-4", "border-white");
+        selectedColor = circle;
+      }
+
+      // JavaScript to handle tab switching
+      const tabs = document.querySelectorAll('.flex-1 a');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          // Hide all tab contents
+          tabContents.forEach((content) => {
+            content.classList.add('hidden');
+          });
+
+          // Remove border from all tabs
+          tabs.forEach((t) => {
+            t.classList.remove('border-green-500');
+            t.classList.add('border-transparent');
+          });
+
+          // Show the clicked tab content
+          tabContents[index].classList.remove('hidden');
+
+          // Add border to the clicked tab
+          tab.classList.remove('border-transparent');
+          tab.classList.add('border-green-500');
+        });
+      });
+    </script>
+</body>
+
 </html>
