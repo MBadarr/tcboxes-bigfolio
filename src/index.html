@@ -116,19 +116,101 @@
                 </button>
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Content for Tab 2 (visible when Tab 2 is active) -->
-            <div class="tab-content hidden" id="tab2">
-              Content for Tab 2 goes here.
-              Content for Tab 2 goes here.
-              Content for Tab 2 goes here.
+        <!-- tab 2 -->
+        <div class="tab-content hidden" id="tab2">
+          <div class="mt-4">
+            <h2 class="text-base font-medium">Choose your model</h2>
+            <div class="flex items-center justify-center gap-3 pt-3">
+              <!-- Card 1 -->
+              <div
+                class="w-52 h-28 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                onclick="toggleCardHighlight(this)">
+                <img src="./assets//images//headboard.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                <div class="flex justify-center gap-0 flex-col mb-2">
+                  <p class="text-center text-gray-700 highlight-text">Cannopies</p>
+                  <!-- <p class="text-center text-gray-700 highlight-text">headboard</p> -->
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div
+                class="w-52 h-28 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                onclick="toggleCardHighlight(this)">
+                <img src="./assets//images//headboard2.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                <div class="flex justify-center gap-0 flex-col mb-2">
+                  <p class="text-center text-gray-700 highlight-text">Toolboxes</p>
+                  <!-- <p class="text-center text-gray-700 highlight-text">headboard</p> -->
+                </div>
+              </div>
+
+              <!-- card 3 -->
+              <div
+                class="w-52 h-28 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                onclick="toggleCardHighlight(this)">
+                <img src="./assets//images//headboard2.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                <div class="flex justify-center gap-0 flex-col mb-2">
+                  <p class="text-center text-gray-700 highlight-text">Dog Boxes</p>
+                  <!-- <p class="text-center text-gray-700 highlight-text">headboard</p> -->
+                </div>
+              </div>
+
             </div>
 
-            <!-- Content for Tab 3 (visible when Tab 3 is active) -->
-            <div class="tab-content hidden" id="tab3">
-              Content for Tab 3 goes here.
+            <div class="mt-4">
+              <h2 class="text-base font-medium">Choose your model</h2>
+            </div>
+
+          </div>
+          <div class="mt-4">
+            <h2 class="text-base font-medium">Choose your size</h2>
+            <!-- <div class="mt-4"> -->
+            <div class="max-w-md mx-auto rounded-md">
+              <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                <option value="option1" selected>1650MM</option>
+                <option value="option2">1650MM</option>
+                <option value="option3">1650MM</option>
+              </select>
+            </div>
+            <!-- </div> -->
+          </div>
+
+          <div class="mt-4">
+            <h2 class="text-base font-medium">Choose your finish</h2>
+            <div class="flex gap-8 pt-4">
+              <div class="w-12 h-12 bg-black rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+              </div>
+              <div class="w-12 h-12 bg-white-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+              </div>
+              <div class="w-12 h-12 bg-amber-50 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+              </div>
+              <div class="w-12 h-12 bg-green-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+              </div>
             </div>
           </div>
+
+
+          <!-- button -->
+
+          <div class="mt-8">
+            <button class="text-white px-6 py-6 w-full rounded-md bg-green-500 text-lg font-bold">
+              Add and continue
+            </button>
+          </div>
+
+          <div class="mt-8">
+            <div class="flex justify-center items-center">
+              <button class="flex justify-center items-center gap-3">
+                <img src="./assets//icons//arrow.svg" alt="arrow">
+                <p class="text-lg font-bold">Back</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content hidden" id="tab3">
+          Content for Tab 3 goes here.
         </div>
       </div>
     </div>
