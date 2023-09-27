@@ -253,85 +253,143 @@
             </div>
           </div>
 
-          <div class="tab-content hidden" id="tab3">
-            Content for Tab 3 goes here.
+        </div>
+        <div class="tab-content hidden" id="tab3">
+          <div class="mt-4">
+            <h2 class="text-base font-medium">Accessories Type</h2>
+            <div class="flex justify-between gap-4 items-center mt-3">
+              <div
+                class="w-44 h-12 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                onclick="accCardHighlight(this)">
+                <div class="flex justify-center">
+                  <p class="text-green-700 highlight-text">External</p>
+                </div>
+              </div>
+
+              <div
+                class="w-44 h-12 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                onclick="accCardHighlight(this)">
+                <div class="flex justify-center items-center">
+                  <p class="text-green-700 highlight-text">Internal</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <script>
-        // card highlighting
-        let selectedCard = null;
+        <script>
+          // card highlighting
+          let selectedCard = null;
 
-        function toggleCardHighlight(card) {
-          if (selectedCard === card) {
-            // Deselect the currently selected card
-            selectedCard.classList.remove("bg-gray-200");
-            const textElements = selectedCard.querySelectorAll(".font-bold");
-            textElements.forEach((textElement) => {
-              textElement.classList.remove("font-bold");
-            });
-            selectedCard = null;
-          } else {
-            // Deselect the previously selected card (if any)
-            if (selectedCard) {
+          function toggleCardHighlight(card) {
+            if (selectedCard === card) {
+              // Deselect the currently selected card
               selectedCard.classList.remove("bg-gray-200");
               const textElements = selectedCard.querySelectorAll(".font-bold");
               textElements.forEach((textElement) => {
                 textElement.classList.remove("font-bold");
               });
+              selectedCard = null;
+            } else {
+              // Deselect the previously selected card (if any)
+              if (selectedCard) {
+                selectedCard.classList.remove("bg-gray-200");
+                const textElements = selectedCard.querySelectorAll(".font-bold");
+                textElements.forEach((textElement) => {
+                  textElement.classList.remove("font-bold");
+                });
+              }
+
+              // Select the clicked card
+              card.classList.add("bg-gray-200");
+              const textElements = card.querySelectorAll(".text-gray-700");
+              textElements.forEach((textElement) => {
+                textElement.classList.add("font-bold");
+              });
+              selectedCard = card;
+            }
+          }
+
+          // Accessories card highlight
+
+          let accCard = null;
+
+          function accCardHighlight(card) {
+            if (accCard === card) {
+              // Deselect the currently selected card
+              accCard.classList.remove("bg-green-200");
+              const textElements = accCard.querySelectorAll(".font-bold");
+              textElements.forEach((textElement) => {
+                textElement.classList.remove("font-bold");
+              });
+              accCard = null;
+            } else {
+              // Deselect the previously selected card (if any)
+              if (accCard) {
+                accCard.classList.remove("bg-green-200");
+                const textElements = accCard.querySelectorAll(".font-bold");
+                textElements.forEach((textElement) => {
+                  textElement.classList.remove("font-bold");
+                });
+              }
+
+              // Select the clicked card
+              card.classList.add("bg-green-200");
+              const textElements = card.querySelectorAll(".text-green-700");
+              textElements.forEach((textElement) => {
+                textElement.classList.add("font-bold");
+              });
+              accCard = card;
+            }
+          }
+
+
+
+
+
+
+
+
+          // color select
+
+          let selectedColor = null;
+
+          function selectColor(circle) {
+            if (selectedColor) {
+              selectedColor.classList.remove("border-4", "border-white");
             }
 
-            // Select the clicked card
-            card.classList.add("bg-gray-200");
-            const textElements = card.querySelectorAll(".text-gray-700");
-            textElements.forEach((textElement) => {
-              textElement.classList.add("font-bold");
-            });
-            selectedCard = card;
-          }
-        }
-
-        // color select
-
-        let selectedColor = null;
-
-        function selectColor(circle) {
-          if (selectedColor) {
-            selectedColor.classList.remove("border-4", "border-white");
+            circle.classList.add("border-4", "border-white");
+            selectedColor = circle;
           }
 
-          circle.classList.add("border-4", "border-white");
-          selectedColor = circle;
-        }
+          // JavaScript to handle tab switching
+          const tabs = document.querySelectorAll('.flex-1 a');
+          const tabContents = document.querySelectorAll('.tab-content');
 
-        // JavaScript to handle tab switching
-        const tabs = document.querySelectorAll('.flex-1 a');
-        const tabContents = document.querySelectorAll('.tab-content');
+          tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (e) => {
+              e.preventDefault();
 
-        tabs.forEach((tab, index) => {
-          tab.addEventListener('click', (e) => {
-            e.preventDefault();
+              // Hide all tab contents
+              tabContents.forEach((content) => {
+                content.classList.add('hidden');
+              });
 
-            // Hide all tab contents
-            tabContents.forEach((content) => {
-              content.classList.add('hidden');
+              // Remove border from all tabs
+              tabs.forEach((t) => {
+                t.classList.remove('border-green-500');
+                t.classList.add('border-transparent');
+              });
+
+              // Show the clicked tab content
+              tabContents[index].classList.remove('hidden');
+
+              // Add border to the clicked tab
+              tab.classList.remove('border-transparent');
+              tab.classList.add('border-green-500');
             });
-
-            // Remove border from all tabs
-            tabs.forEach((t) => {
-              t.classList.remove('border-green-500');
-              t.classList.add('border-transparent');
-            });
-
-            // Show the clicked tab content
-            tabContents[index].classList.remove('hidden');
-
-            // Add border to the clicked tab
-            tab.classList.remove('border-transparent');
-            tab.classList.add('border-green-500');
           });
-        });
-      </script>
+        </script>
 </body>
 
 </html>
