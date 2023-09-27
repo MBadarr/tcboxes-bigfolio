@@ -275,6 +275,36 @@
               </div>
             </div>
           </div>
+
+          <!-- collapse card -->
+          <div class="mt-4">
+            <h2 class="text-base font-medium">Choose your External Accessories</h2>
+            <div class="container mx-auto py-3">
+              <!-- Collapse Card -->
+              <div class="border border-gray-300 rounded-lg overflow-hidden shadow">
+                <!-- Card Header -->
+                <div class="p-4 flex justify-between"> <!-- Updated this line -->
+                  <div class="flex justify-start gap-4"> <!-- Added this line -->
+                    <input type="checkbox" id="1" name="racks" value="Racks">
+                    <h2 class="text-lg font-semibold">Ladder Racks</h2>
+                  </div>
+                  <button id="toggleButton" class="text-gray-500 hover:text-black focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </div>
+                <!-- Card Content (Initially Hidden) -->
+                <div id="collapseContent" class="hidden p-4">
+                  <p>This is the content of the collapse card.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
         <script>
           // card highlighting
@@ -343,10 +373,22 @@
           }
 
 
+          // collapse card 
 
 
 
+          document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggleButton");
+            const collapseContent = document.getElementById("collapseContent");
 
+            toggleButton.addEventListener("click", function () {
+              if (collapseContent.style.display === "none" || collapseContent.style.display === "") {
+                collapseContent.style.display = "block";
+              } else {
+                collapseContent.style.display = "none";
+              }
+            });
+          });
 
 
           // color select
