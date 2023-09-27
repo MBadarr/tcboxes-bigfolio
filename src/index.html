@@ -90,11 +90,12 @@
             <div class="mt-4">
               <h2 class="text-base font-medium">Choose your finish</h2>
               <div class="flex gap-8 pt-4">
-                <div class="w-12 h-12 bg-black rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
                 </div>
-                <div class="w-12 h-12 bg-white-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200 border border-gray-200"
+                  onclick="selectColor(this)">
                 </div>
-                <div class="w-12 h-12 bg-amber-50 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-amber-200 rounded-full" onclick="selectColor(this)">
                 </div>
               </div>
             </div>
@@ -160,7 +161,6 @@
 
             <div class="mt-4">
               <h2 class="text-base font-medium">Choose your Material</h2>
-
               <div class="flex justify-between gap-4 items-center mt-4">
                 <div
                   class="w-40 h-14 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
@@ -205,8 +205,8 @@
                   </div>
                 </div>
               </div>
-
             </div>
+
             <div class="mt-4">
               <h2 class="text-base font-medium">Choose your size</h2>
               <!-- <div class="mt-4"> -->
@@ -223,13 +223,13 @@
             <div class="mt-4">
               <h2 class="text-base font-medium">Choose your finish</h2>
               <div class="flex gap-8 pt-4">
-                <div class="w-12 h-12 bg-black rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
                 </div>
-                <div class="w-12 h-12 bg-white-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200" onclick="selectColor(this)">
                 </div>
-                <div class="w-12 h-12 bg-amber-50 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
                 </div>
-                <div class="w-12 h-12 bg-green-500 rounded-full leading-10 outline-dashed" onclick="selectColor(this)">
+                <div class="w-12 h-12 bg-green-500 rounded-full" onclick="selectColor(this)">
                 </div>
               </div>
             </div>
@@ -276,19 +276,19 @@
             </div>
           </div>
 
-          <!-- collapse card -->
+
           <div class="mt-4">
             <h2 class="text-base font-medium">Choose your External Accessories</h2>
             <div class="container mx-auto py-3">
-              <!-- Collapse Card -->
-              <div class="border border-gray-300 rounded-lg overflow-hidden shadow">
+              <!-- First Collapse Card -->
+              <div class="border border-gray-300 rounded-lg overflow-hidden shadow card">
                 <!-- Card Header -->
-                <div class="p-4 flex justify-between"> <!-- Updated this line -->
-                  <div class="flex justify-start gap-4"> <!-- Added this line -->
+                <div class="p-4 flex justify-between">
+                  <div class="flex justify-start gap-4">
                     <input type="checkbox" id="1" name="racks" value="Racks">
                     <h2 class="text-lg font-semibold">Ladder Racks</h2>
                   </div>
-                  <button id="toggleButton" class="text-gray-500 hover:text-black focus:outline-none">
+                  <button class="text-gray-500 hover:text-black focus:outline-none toggleButton">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                       stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -296,142 +296,603 @@
                   </button>
                 </div>
                 <!-- Card Content (Initially Hidden) -->
-                <div id="collapseContent" class="hidden p-4">
-                  <p>This is the content of the collapse card.</p>
+                <div class="hidden p-4 collapseContent">
+                  <div class="border border-gray-100 -mt-5"></div>
+                  <div class="mt-4">
+                    <h2 class="text-base font-medium">Choose your Modal</h2>
+                    <div class="flex flex-col gap-4 mt-4">
+                      <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                        onclick="toggleCardHighlight(this)">
+                        <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                          <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                          <p class=" text-gray-700 highlight-text">Steel</p>
+                        </div>
+                      </div>
+
+                      <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                        onclick="toggleCardHighlight(this)">
+                        <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                          <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                          <p class=" text-gray-700 highlight-text">Steel</p>
+                        </div>
+                      </div>
+
+                      <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                        onclick="toggleCardHighlight(this)">
+                        <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                          <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                          <p class=" text-gray-700 highlight-text">Steel</p>
+                        </div>
+                      </div>
+
+
+                      <div class="mt-1">
+                        <h2 class="text-base font-medium">Choose your size</h2>
+                        <!-- <div class="mt-4"> -->
+                        <div class="max-w-md mx-auto rounded-md">
+                          <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                            <option value="option1" selected>1650MM</option>
+                            <option value="option2">1650MM</option>
+                            <option value="option3">1650MM</option>
+                          </select>
+                        </div>
+                        <!-- </div> -->
+                      </div>
+
+                      <div class="mt-1">
+                        <h2 class="text-base font-medium">Choose your finish</h2>
+                        <div class="flex gap-8 pt-4">
+                          <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
+                          </div>
+                          <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200"
+                            onclick="selectColor(this)">
+                          </div>
+                          <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <!-- collapse card -->
+
+
+
+
+
+              </div>
+
+              <!-- second collapsable card -->
+              <div class="mt-4">
+                <div class="border border-gray-300 rounded-lg overflow-hidden shadow card">
+                  <!-- Card Header -->
+                  <div class="p-4 flex justify-between">
+                    <div class="flex justify-start gap-4">
+                      <input type="checkbox" id="1" name="racks" value="Racks">
+                      <h2 class="text-lg font-semibold">Jerry Can Holders</h2>
+                    </div>
+                    <button class="text-gray-500 hover:text-black focus:outline-none toggleButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Card Content (Initially Hidden) -->
+                  <div class="hidden p-4 collapseContent">
+                    <div class="border border-gray-100 -mt-5"></div>
+                    <div class="mt-4">
+                      <h2 class="text-base font-medium">Choose your model</h2>
+                      <div class="flex items-center justify-center gap-7 pt-3">
+                        <!-- Card 1 -->
+                        <div
+                          class="w-48 h-36 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <img src="./assets//images//headboard.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                          <div class="flex justify-center gap-0 flex-col mb-4">
+                            <p class="text-center text-gray-700 highlight-text">With</p>
+                            <!-- <p class="text-center text-gray-700 highlight-text">headboard</p> -->
+                          </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                          class="w-48 h-36 flex flex-col items-center justify-center gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <img src="./assets//images//headboard2.svg" alt="Image 2" class="w-32 h-32 rounded-full">
+                          <div class="flex justify-center gap-0 flex-col mb-4">
+                            <p class="text-center text-gray-700 highlight-text">Without</p>
+                            <!-- <p class="text-center text-gray-700 highlight-text">headboard</p> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-1">
+                      <h2 class="text-base font-medium">Choose your finish</h2>
+                      <div class="flex gap-8 pt-4">
+                        <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
+                        </div>
+                        <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200"
+                          onclick="selectColor(this)">
+                        </div>
+                        <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-4">
+                      <div class="flex items-center gap-3 space-x-2">
+                        <p>Quantity</p>
+                        <button
+                          class="w-10 h-10 rounded-full bg-white text-gray-400 flex items-center justify-center border border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path>
+                          </svg>
+                        </button>
+                        <span class="text-xl font-semibold">1</span>
+                        <button
+                          class="w-10 h-10 rounded-full bg-white text-gray-400 flex items-center justify-center border border-gray-200">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                          </svg>
+                        </button>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!-- collapse card -->
+
+
+
+
+
                 </div>
               </div>
-            </div>
-          </div>
+
+
+              <!-- third collapsable card -->
+              <div class="mt-4">
+                <div class="border border-gray-300 rounded-lg overflow-hidden shadow card">
+                  <!-- Card Header -->
+                  <div class="p-4 flex justify-between">
+                    <div class="flex justify-start gap-4">
+                      <input type="checkbox" id="1" name="racks" value="Racks">
+                      <h2 class="text-lg font-semibold">Spare Wheel Holders</h2>
+                    </div>
+                    <button class="text-gray-500 hover:text-black focus:outline-none toggleButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Card Content (Initially Hidden) -->
+                  <div class="hidden p-4 collapseContent">
+                    <div class="border border-gray-100 -mt-5"></div>
+                    <div class="mt-4">
+                      <h2 class="text-base font-medium">Choose your Modal</h2>
+                      <div class="flex flex-col gap-4 mt-4">
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your size</h2>
+                          <!-- <div class="mt-4"> -->
+                          <div class="max-w-md mx-auto rounded-md">
+                            <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                              <option value="option1" selected>1650MM</option>
+                              <option value="option2">1650MM</option>
+                              <option value="option3">1650MM</option>
+                            </select>
+                          </div>
+                          <!-- </div> -->
+                        </div>
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your finish</h2>
+                          <div class="flex gap-8 pt-4">
+                            <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200"
+                              onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
 
 
 
-        </div>
-        <script>
-          // card highlighting
-          let selectedCard = null;
 
-          function toggleCardHighlight(card) {
-            if (selectedCard === card) {
-              // Deselect the currently selected card
-              selectedCard.classList.remove("bg-gray-200");
-              const textElements = selectedCard.querySelectorAll(".font-bold");
-              textElements.forEach((textElement) => {
-                textElement.classList.remove("font-bold");
-              });
-              selectedCard = null;
-            } else {
-              // Deselect the previously selected card (if any)
-              if (selectedCard) {
-                selectedCard.classList.remove("bg-gray-200");
-                const textElements = selectedCard.querySelectorAll(".font-bold");
-                textElements.forEach((textElement) => {
-                  textElement.classList.remove("font-bold");
+                  <!-- collapse card -->
+
+
+
+
+
+                </div>
+              </div>
+
+              <!-- Fourth collapsable card -->
+
+              <div class="mt-4">
+                <div class="border border-gray-300 rounded-lg overflow-hidden shadow card">
+                  <!-- Card Header -->
+                  <div class="p-4 flex justify-between">
+                    <div class="flex justify-start gap-4">
+                      <input type="checkbox" id="1" name="racks" value="Racks">
+                      <h2 class="text-lg font-semibold">Tray Sides</h2>
+                    </div>
+                    <button class="text-gray-500 hover:text-black focus:outline-none toggleButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Card Content (Initially Hidden) -->
+                  <div class="hidden p-4 collapseContent">
+                    <div class="border border-gray-100 -mt-5"></div>
+                    <div class="mt-4">
+                      <h2 class="text-base font-medium">Choose your Modal</h2>
+                      <div class="flex flex-col gap-4 mt-4">
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your size</h2>
+                          <!-- <div class="mt-4"> -->
+                          <div class="max-w-md mx-auto rounded-md">
+                            <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                              <option value="option1" selected>1650MM</option>
+                              <option value="option2">1650MM</option>
+                              <option value="option3">1650MM</option>
+                            </select>
+                          </div>
+                          <!-- </div> -->
+                        </div>
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your finish</h2>
+                          <div class="flex gap-8 pt-4">
+                            <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200"
+                              onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!-- collapse card -->
+
+
+
+
+
+                </div>
+              </div>
+
+
+              <!-- Fifth Collapsable Card -->
+
+
+              <div class="mt-4">
+                <div class="border border-gray-300 rounded-lg overflow-hidden shadow card">
+                  <!-- Card Header -->
+                  <div class="p-4 flex justify-between">
+                    <div class="flex justify-start gap-4">
+                      <input type="checkbox" id="1" name="racks" value="Racks">
+                      <h2 class="text-lg font-semibold">Jack Off Legs</h2>
+                    </div>
+                    <button class="text-gray-500 hover:text-black focus:outline-none toggleButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Card Content (Initially Hidden) -->
+                  <div class="hidden p-4 collapseContent">
+                    <div class="border border-gray-100 -mt-5"></div>
+                    <div class="mt-4">
+                      <h2 class="text-base font-medium">Choose your Modal</h2>
+                      <div class="flex flex-col gap-4 mt-4">
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+                        <div class="w-full h-14 gap-0 border border-gray-300 rounded-lg cursor-pointer"
+                          onclick="toggleCardHighlight(this)">
+                          <div class="flex flex-row justify-start items-center gap-4 py-3 px-3">
+                            <img src="./assets/images/headboard.svg" alt="" srcset="" width="40" height="40">
+                            <p class=" text-gray-700 highlight-text">Steel</p>
+                          </div>
+                        </div>
+
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your size</h2>
+                          <!-- <div class="mt-4"> -->
+                          <div class="max-w-md mx-auto rounded-md">
+                            <select id="select" name="select" class="mt-2 w-full px-4 py-4 border rounded-md">
+                              <option value="option1" selected>1650MM</option>
+                              <option value="option2">1650MM</option>
+                              <option value="option3">1650MM</option>
+                            </select>
+                          </div>
+                          <!-- </div> -->
+                        </div>
+
+                        <div class="mt-1">
+                          <h2 class="text-base font-medium">Choose your finish</h2>
+                          <div class="flex gap-8 pt-4">
+                            <div class="w-12 h-12 bg-black rounded-full" onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-white-500 rounded-full border border-gray-200"
+                              onclick="selectColor(this)">
+                            </div>
+                            <div class="w-12 h-12 bg-amber-50 rounded-full" onclick="selectColor(this)">
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!-- collapse card -->
+
+
+
+
+
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <button class="text-white px-6 py-6 w-full rounded-md bg-green-500 text-lg font-bold">
+                  Go to Preview
+                </button>
+              </div>
+
+              <div class="mt-8">
+                <div class="flex justify-center items-center">
+                  <button class="flex justify-center items-center gap-3">
+                    <img src="./assets//icons//arrow.svg" alt="arrow">
+                    <p class="text-lg font-bold">Back</p>
+                  </button>
+                </div>
+              </div>
+
+              <script>
+                // card highlighting
+                let selectedCard = null;
+
+                function toggleCardHighlight(card) {
+                  if (selectedCard === card) {
+                    // Deselect the currently selected card
+                    selectedCard.classList.remove("bg-gray-200");
+                    const textElements = selectedCard.querySelectorAll(".font-bold");
+                    textElements.forEach((textElement) => {
+                      textElement.classList.remove("font-bold");
+                    });
+                    selectedCard = null;
+                  } else {
+                    // Deselect the previously selected card (if any)
+                    if (selectedCard) {
+                      selectedCard.classList.remove("bg-gray-200");
+                      const textElements = selectedCard.querySelectorAll(".font-bold");
+                      textElements.forEach((textElement) => {
+                        textElement.classList.remove("font-bold");
+                      });
+                    }
+
+                    // Select the clicked card
+                    card.classList.add("bg-gray-200");
+                    const textElements = card.querySelectorAll(".text-gray-700");
+                    textElements.forEach((textElement) => {
+                      textElement.classList.add("font-bold");
+                    });
+                    selectedCard = card;
+                  }
+                }
+
+                // Accessories card highlight
+
+                let accCard = null;
+
+                function accCardHighlight(card) {
+                  if (accCard === card) {
+                    // Deselect the currently selected card
+                    accCard.classList.remove("bg-green-200");
+                    const textElements = accCard.querySelectorAll(".font-bold");
+                    textElements.forEach((textElement) => {
+                      textElement.classList.remove("font-bold");
+                    });
+                    accCard = null;
+                  } else {
+                    // Deselect the previously selected card (if any)
+                    if (accCard) {
+                      accCard.classList.remove("bg-green-200");
+                      const textElements = accCard.querySelectorAll(".font-bold");
+                      textElements.forEach((textElement) => {
+                        textElement.classList.remove("font-bold");
+                      });
+                    }
+
+                    // Select the clicked card
+                    card.classList.add("bg-green-200");
+                    const textElements = card.querySelectorAll(".text-green-700");
+                    textElements.forEach((textElement) => {
+                      textElement.classList.add("font-bold");
+                    });
+                    accCard = card;
+                  }
+                }
+
+
+                // collapse card 
+
+
+
+                // document.addEventListener("DOMContentLoaded", function () {
+                //   const toggleButton = document.getElementById("toggleButton");
+                //   const collapseContent = document.getElementById("collapseContent");
+
+                //   toggleButton.addEventListener("click", function () {
+                //     if (collapseContent.style.display === "none" || collapseContent.style.display === "") {
+                //       collapseContent.style.display = "block";
+                //     } else {
+                //       collapseContent.style.display = "none";
+                //     }
+                //   });
+                // });
+
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                  // Get all toggle buttons and collapse content elements
+                  const toggleButtons = document.querySelectorAll(".toggleButton");
+                  const collapseContents = document.querySelectorAll(".collapseContent");
+
+                  // Add click event listeners to each toggle button
+                  toggleButtons.forEach((toggleButton, index) => {
+                    toggleButton.addEventListener("click", function () {
+                      // Toggle the display property of the corresponding collapse content
+                      if (collapseContents[index].style.display === "none" || collapseContents[index].style.display === "") {
+                        collapseContents[index].style.display = "block";
+                      } else {
+                        collapseContents[index].style.display = "none";
+                      }
+                    });
+                  });
                 });
-              }
 
-              // Select the clicked card
-              card.classList.add("bg-gray-200");
-              const textElements = card.querySelectorAll(".text-gray-700");
-              textElements.forEach((textElement) => {
-                textElement.classList.add("font-bold");
-              });
-              selectedCard = card;
-            }
-          }
 
-          // Accessories card highlight
+                // color select
 
-          let accCard = null;
+                let selectedColor = null;
 
-          function accCardHighlight(card) {
-            if (accCard === card) {
-              // Deselect the currently selected card
-              accCard.classList.remove("bg-green-200");
-              const textElements = accCard.querySelectorAll(".font-bold");
-              textElements.forEach((textElement) => {
-                textElement.classList.remove("font-bold");
-              });
-              accCard = null;
-            } else {
-              // Deselect the previously selected card (if any)
-              if (accCard) {
-                accCard.classList.remove("bg-green-200");
-                const textElements = accCard.querySelectorAll(".font-bold");
-                textElements.forEach((textElement) => {
-                  textElement.classList.remove("font-bold");
+                function selectColor(circle) {
+                  if (selectedColor) {
+                    selectedColor.classList.remove("border-4", "border-gray-200");
+                  }
+
+                  circle.classList.add("border-4", "border-gray-200");
+                  selectedColor = circle;
+                }
+
+                // JavaScript to handle tab switching
+                const tabs = document.querySelectorAll('.flex-1 a');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabs.forEach((tab, index) => {
+                  tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Hide all tab contents
+                    tabContents.forEach((content) => {
+                      content.classList.add('hidden');
+                    });
+
+                    // Remove border from all tabs
+                    tabs.forEach((t) => {
+                      t.classList.remove('border-green-500');
+                      t.classList.add('border-transparent');
+                    });
+
+                    // Show the clicked tab content
+                    tabContents[index].classList.remove('hidden');
+
+                    // Add border to the clicked tab
+                    tab.classList.remove('border-transparent');
+                    tab.classList.add('border-green-500');
+                  });
                 });
-              }
-
-              // Select the clicked card
-              card.classList.add("bg-green-200");
-              const textElements = card.querySelectorAll(".text-green-700");
-              textElements.forEach((textElement) => {
-                textElement.classList.add("font-bold");
-              });
-              accCard = card;
-            }
-          }
-
-
-          // collapse card 
-
-
-
-          document.addEventListener("DOMContentLoaded", function () {
-            const toggleButton = document.getElementById("toggleButton");
-            const collapseContent = document.getElementById("collapseContent");
-
-            toggleButton.addEventListener("click", function () {
-              if (collapseContent.style.display === "none" || collapseContent.style.display === "") {
-                collapseContent.style.display = "block";
-              } else {
-                collapseContent.style.display = "none";
-              }
-            });
-          });
-
-
-          // color select
-
-          let selectedColor = null;
-
-          function selectColor(circle) {
-            if (selectedColor) {
-              selectedColor.classList.remove("border-4", "border-white");
-            }
-
-            circle.classList.add("border-4", "border-white");
-            selectedColor = circle;
-          }
-
-          // JavaScript to handle tab switching
-          const tabs = document.querySelectorAll('.flex-1 a');
-          const tabContents = document.querySelectorAll('.tab-content');
-
-          tabs.forEach((tab, index) => {
-            tab.addEventListener('click', (e) => {
-              e.preventDefault();
-
-              // Hide all tab contents
-              tabContents.forEach((content) => {
-                content.classList.add('hidden');
-              });
-
-              // Remove border from all tabs
-              tabs.forEach((t) => {
-                t.classList.remove('border-green-500');
-                t.classList.add('border-transparent');
-              });
-
-              // Show the clicked tab content
-              tabContents[index].classList.remove('hidden');
-
-              // Add border to the clicked tab
-              tab.classList.remove('border-transparent');
-              tab.classList.add('border-green-500');
-            });
-          });
-        </script>
+              </script>
 </body>
 
 </html>
