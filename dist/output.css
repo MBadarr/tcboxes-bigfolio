@@ -913,6 +913,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-bg-button{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 184 149 / var(--tw-bg-opacity));
+}
+
 .p-4{
   padding: 1rem;
 }
