@@ -12,6 +12,7 @@ module.exports = {
                 'bg-3': '#EFE9E0',
                 'bg-4': '#8A8A8A',
                 'bg-5': '#0A0A0C',
+                // 'bg-gradient ': 'linear-gradient(180deg, #CCC 0%, #A8A8A8 100%)',
                 'bg-button': '#1FB895',
             },
         },
